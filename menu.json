@@ -12,7 +12,7 @@
     {
       "kind": "main",
       "tag": "com-sap-ci-side-navigation-menu",
-      "url": "https://sac-dev-cw.novartis.net/cw/dev/side-navigation-menu/ci-side-navigation-menu.js",
+      "url": "https://airfon.github.io/ci-sidemenu/menu.js",
       "integrity": "",
       "ignoreIntegrity" : true
     }
@@ -21,11 +21,6 @@
     "URLParameter": {
       "type": "string",
       "description": "The URL Parameter",
-      "default": ""
-    },
-    "AccessParameter": {
-      "type": "any",
-      "description": "Access Parameter",
       "default": ""
     }
   },
@@ -48,29 +43,11 @@
         }
       ],
       "body": "this.URLParameter = newParameter;"
-    },
-
-    "setAccess": {
-      "description": "Sets the Access of the User",
-      "parameters": [
-        {
-          "name": "newAccess",
-          "type": "any",
-          "description": "Access String"
-        }
-      ],
-      "body": "this.AccessParameter = newAccess;"
     }
   },
   "events": {
     "onClick": {
       "description": "Returns the option selected."
-    },
-    "onOpen": {
-      "description": "Event on the user opens the Menu"
-    },
-    "onClose": {
-      "description": "Event on the user closes the Menu"
     }
   }
 }
