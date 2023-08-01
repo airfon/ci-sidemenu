@@ -90,10 +90,21 @@
 			let shadowRoot = this.attachShadow({mode: "open"});
 			shadowRoot.appendChild(template.content.cloneNode(true));
 		}
+
+		let menuItems = this._shadowRoot.getElementsByClassName("menu-item-container");
+		Array.from(menuItems).forEach((menuItem) => {
+			menuItem.addEventListener.addEventListener("click", menuItem, true);
+		});
+
 		getID() {
 			return ID;
 		}
 	});
+
+	function setSelectedId(trigger) {
+		console.log(trigger);
+	}
+	
 	var parentElements = document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"');
 	parentElements.querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
 })();
