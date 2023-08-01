@@ -1,0 +1,38 @@
+{
+  "name": "Side Navigation Menu",
+  "description": "Cost Insights - Sidebar",
+  "eula": "",
+  "vendor": "str",
+  "license": "",
+  "id": "com.str.costinsights.sidebar",
+  "newInstancePrefix": "SideBar",
+  "version": "1.0.0",
+  "icon": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-str-costinsights-sidebar",
+      "url": "https://airfon.github.io/ci-sidemenu/main.js",
+      "integrity": "",
+      "ignoreIntegrity" : true
+    }
+  ],
+  "properties": {
+    "URLParameter": {
+      "type": "string",
+      "description": "The URL Parameter",
+      "default": ""
+    }
+  },
+  "methods": {
+    "getID": {
+      "returnType": "string",
+      "description": "Return ID of option selected"
+    }
+  },
+  "events": {
+    "onClick": {
+      "description": "Returns the option selected."
+    }
+  }
+}
