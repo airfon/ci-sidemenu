@@ -91,11 +91,11 @@
 			shadowRoot.appendChild(template.content.cloneNode(true));
 		}
 
-		console.log(this);
-		//let menuItems = this._shadowRoot.getElementsByClassName("menu-item-container");
-		//Array.from(menuItems).forEach((menuItem) => {
-		//	menuItem.addEventListener.addEventListener("click", menuItem, true);
-		//});
+	    connectedCallback(){
+		this.firstConnection = true;
+		var that = this;
+		initializeMenu(that);
+	    }
 
 		getID() {
 			return ID;
@@ -104,6 +104,14 @@
 
 	function setSelectedId(trigger) {
 		console.log(trigger);
+	}
+
+	function initializeMenu(that) {
+		console.log(that);
+		let menuItems = that._shadowRoot.getElementsByClassName("menu-item-container");
+		Array.from(menuItems).forEach((menuItem) => {
+			menuItem.addEventListener.addEventListener("click", menuItem, true);
+		});
 	}
 	
 	var parentElements = document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"');
