@@ -93,7 +93,6 @@
 		}
 		
 		connectedCallback() {
-			this.firstConnection = true;
 			var that = this;
 			initializeMenu(that);
 		}
@@ -104,8 +103,7 @@
 	});
 
 	function setSelectedId() {
-		console.log(this);
-		console.log(this.UID);
+		ID = this.getAttribute("uid")
 	}
 
 	function initializeMenu(that) {
