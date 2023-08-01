@@ -1,5 +1,5 @@
 (function()  {
-	let template = document.createElement("template");
+	let root = document.createElement("div");
 	template.innerHTML = `
 	<style>
 		.navigation-menu {
@@ -87,8 +87,7 @@
 	customElements.define('com-str-costinsights-sidebar', class SideBar extends HTMLElement {
 		constructor() {
 			super();
-			let shadowRoot = this.attachShadow({mode: "open"});
-			shadowRoot.appendChild(template.content.cloneNode(true));
+			
 		}
 
 	    connectedCallback(){
