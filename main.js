@@ -83,7 +83,6 @@
 
 	function setSelectedId() {
 		ID = this.getAttribute("uid");
-		
 	}
 
 	function initializeMenu(that) {		
@@ -106,10 +105,6 @@
 			menuItemContainer.addEventListener("click", setSelectedId);
 			navigationMenu.appendChild(menuItemContainer);
 		}
-		//let menuItems = that.getElementsByClassName("menu-item-container");
-		//Array.from(menuItems).forEach((menuItem) => {
-		//	menuItem.addEventListener("click", setSelectedId);
-		//});	
 	}
 	document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"').querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
 })();
