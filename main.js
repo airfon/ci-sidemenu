@@ -105,9 +105,6 @@
 			menuItemContainer.addEventListener("click", setSelectedId);
 			navigationMenu.appendChild(menuItemContainer);
 		}
+		document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"').querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
 	}
-	console.log(document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"'));
-	document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"').querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
-	console.log(document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"').querySelector('div[class~="sapCustomWidget"'));
-	
 })();
