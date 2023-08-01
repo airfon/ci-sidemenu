@@ -95,11 +95,11 @@
 		];
 		let navigationMenu = document.getElementById("navigation-menu");
 		for(let i=0;i<menuItemsJSONs.length;i++) {
-			let menuItemContainer = document.createElement(div);
+			let menuItemContainer = document.createElement("div");
 			menuItemContainer.setAttribute("class","menu-item-container");
 			menuItemContainer.setAttribute("uid",menuItemsJSONs[i].uid);
 			menuItemContainer.innerHTML = menuItemsJSONs[i].svg;
-			let textSpan = document.createElement(span);
+			let textSpan = document.createElement("span");
 			textSpan.setAttribute("class","menu-item-text");
 			textSpan.innerHTML = menuItemsJSONs[i].text;
 			menuItemContainer.appendChild(textSpan);
