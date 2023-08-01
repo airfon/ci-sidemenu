@@ -91,10 +91,11 @@
 			shadowRoot.appendChild(template.content.cloneNode(true));
 		}
 
-		let menuItems = this._shadowRoot.getElementsByClassName("menu-item-container");
-		Array.from(menuItems).forEach((menuItem) => {
-			menuItem.addEventListener.addEventListener("click", menuItem, true);
-		});
+		console.log(this);
+		//let menuItems = this._shadowRoot.getElementsByClassName("menu-item-container");
+		//Array.from(menuItems).forEach((menuItem) => {
+		//	menuItem.addEventListener.addEventListener("click", menuItem, true);
+		//});
 
 		getID() {
 			return ID;
