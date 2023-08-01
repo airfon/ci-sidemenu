@@ -16,30 +16,24 @@
 			.menu-item-icon {display: block;fill: #9e9e9e;}
 			</style>
 			<div id="navigation-menu">
-			</div>
-			`;
+			</div>`;
 			this.appendChild(root);
 			this.addEventListener("click", event => {
 		        	let eventClick = new Event("onClick");
 		       		this.dispatchEvent(eventClick);
 			});
-
 		}
-		
 		connectedCallback() {
 			var that = this;
 			initializeMenu(that);
 		}
-
 		getID() {
 			return ID;
 		}
 	});
-
 	function setSelectedId() {
 		ID = this.getAttribute("uid");
 	}
-
 	function initializeMenu(that) {		
 		let menuItemsJSONs = [
 			{uid:"5E903204EB52CD8856B9482101529D6F",text:"Spend Dashboard",svg:'<svg class="menu-item-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid" x="0px" y="0px"><path d="M26.8725 20.9697V6.42424H5.08403V20.9697H26.8725ZM26.8725 4C27.5146 4 28.1304 4.25541 28.5844 4.71004C29.0384 5.16468 29.2935 5.78129 29.2935 6.42424V20.9697C29.2935 21.6126 29.0384 22.2293 28.5844 22.6839C28.1304 23.1385 27.5146 23.3939 26.8725 23.3939H18.3992V25.8182H20.8202V28.2424H11.1364V25.8182H13.5573V23.3939H5.08403C3.74041 23.3939 2.66309 22.303 2.66309 20.9697V6.42424C2.66309 5.07879 3.74041 4 5.08403 4H26.8725ZM7.50497 8.84848H18.3992V14.9091H7.50497V8.84848ZM19.6097 8.84848H24.4516V11.2727H19.6097V8.84848ZM24.4516 12.4848V18.5455H19.6097V12.4848H24.4516ZM7.50497 16.1212H12.3469V18.5455H7.50497V16.1212ZM13.5573 16.1212H18.3992V18.5455H13.5573V16.1212Z"/></svg>'},
