@@ -94,7 +94,6 @@
 	}
 
 	function initializeMenu(that) {
-		console.log(that);
 		let menuItems = that.getElementsByClassName("menu-item-container");
 		Array.from(menuItems).forEach((menuItem) => {
 			menuItem.addEventListener("click", setSelectedId);
