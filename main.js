@@ -1,5 +1,4 @@
 (function()  {
-	let ID = "";
 	let template = document.createElement("template");
 	template.innerHTML = `
 	<style>
@@ -91,7 +90,7 @@
 			let shadowRoot = this.attachShadow({mode: "open"});
 			shadowRoot.appendChild(template.content.cloneNode(true));
 		}
-		getID = {
+		getID() {
 			return ID;
 		}
 	});
