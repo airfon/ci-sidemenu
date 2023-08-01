@@ -6,7 +6,7 @@
 			root.setAttribute("style","height:100%");
 			root.innerHTML = `
 			<style>
-				.navigation-menu {
+				#navigation-menu {
 					width: 70px;
 					height: 100%;
 					overflow: hidden;
@@ -15,7 +15,7 @@
 					background-color: #ffffff;
 				}
 				
-				.navigation-menu:hover {
+				#navigation-menu:hover {
 					width: 270px;
 					transition: width .3s cubic-bezier(0,0.55,0.45,1);
 				}
