@@ -1,14 +1,15 @@
 (function()  {
-    let template = document.createElement("template");
-
-  template.innerHTML = `
-      <style>
+	let ID = "";
+	let template = document.createElement("template");
+	template.innerHTML = `
+	<style>
 		.navigation-menu {
 			width: 70px;
 			height: 100%;
 			overflow: hidden;
 			border-right: 1px solid #c9c9c9;
 			transition: width .3s cubic-bezier(0,0.55,0.45,1) .5s;
+   			background-color: #ffffff;
 		}
 
 		.navigation-menu:hover {
@@ -84,27 +85,16 @@
       </div>
   `;
 
-  customElements.define('com-str-costinsights-sidebar', class SideBar extends HTMLElement {
-        constructor() {
-            super();
-            let shadowRoot = this.attachShadow({
-                mode: "open"
-            });
-            shadowRoot.appendChild(template.content.cloneNode(true));
-            this.addEventListener("click", event => {
-                var event = new Event("onClick");
-                this.dispatchEvent(event);
-            });
-            this._props = {};
-        }
-        onCustomWidgetBeforeUpdate(changedProperties) {
-            this._props = {
-                ...this._props,
-                ...changedProperties
-            };
-        }
-  });
-	
+	customElements.define('com-str-costinsights-sidebar', class SideBar extends HTMLElement {
+		constructor() {
+			super();
+			let shadowRoot = this.attachShadow({mode: "open"});
+			shadowRoot.appendChild(template.content.cloneNode(true));
+		}
+		getID = {
+			return ID;
+		}
+	});
 	var parentElements = document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"');
-		parentElements.querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
+	parentElements.querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
 })();
