@@ -90,6 +90,10 @@
 			</div>
 			`;
 			this.appendChild(root);
+			this.addEventListener("click", event => {
+		        	let eventClick = new Event("onClick");
+		       		this.dispatchEvent(eventClick);
+			});
 		}
 		
 		connectedCallback() {
@@ -103,7 +107,8 @@
 	});
 
 	function setSelectedId() {
-		ID = this.getAttribute("uid")
+		ID = this.getAttribute("uid");
+		
 	}
 
 	function initializeMenu(that) {
