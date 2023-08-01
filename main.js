@@ -111,7 +111,7 @@
 		console.log(that);
 		let menuItems = that.getElementsByClassName("menu-item-container");
 		Array.from(menuItems).forEach((menuItem) => {
-			menuItem.addEventListener.addEventListener("click", menuItem, true);
+			menuItem.addEventListener("click", setSelectedId(menuItem));
 		});
 	}
 	document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"').querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
