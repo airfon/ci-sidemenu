@@ -88,13 +88,14 @@
 		         </div>
 		      </div>
 		  `;
+			this.appendChild(root);
 		}
-
-	    connectedCallback(){
-		this.firstConnection = true;
-		var that = this;
-		initializeMenu(that);
-	    }
+		
+		connectedCallback(){
+			this.firstConnection = true;
+			var that = this;
+			initializeMenu(that);
+		}
 
 		getID() {
 			return ID;
