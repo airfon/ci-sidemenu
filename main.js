@@ -1,9 +1,9 @@
 (function()  {
-    let template = document.createElement("template");
+    let template = document.createElement("div");
 
   template.innerHTML = `
       <style>
-			.navigation-menu {
+		.navigation-menu {
 			width: 70px;
 			height: 100%;
 			overflow: hidden;
@@ -104,4 +104,7 @@
             };
         }
   });
+	
+	var parentElements = document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"');
+		parentElements.querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
 })();
