@@ -1,6 +1,6 @@
 (function()  {
 	let root = document.createElement("div");
-	template.innerHTML = `
+	root.innerHTML = `
 	<style>
 		.navigation-menu {
 			width: 70px;
