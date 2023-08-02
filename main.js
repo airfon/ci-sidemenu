@@ -8,9 +8,8 @@
 			<style>	
    			#navigation-menu {width: 70px;height: 100%;overflow: hidden;border-right: 1px solid #c9c9c9;transition: width .3s cubic-bezier(0,0.55,0.45,1) .5s;background-color: #ffffff;}
 			#navigation-menu:hover {width: 270px;transition: width .3s cubic-bezier(0,0.55,0.45,1);}
-			.menu-item-container {margin-top: 10px;}
+			.menu-item-container {position: relative;height: 60px;width: 100%;margin-top: 10px;cursor: default;}
 			.menu-item-container:first-child {margin-top: 60px;}
-			.menu-item-container {position: relative;height: 60px;width: 100%;cursor: default;}
 			.menu-item-container:hover {background-color: #f5f9fc;}
 			.menu-item-icon {position: absolute;top: 14px;left: 19px;cursor: default;}
 			.menu-item-text {position: absolute;top: 21px;left: 70px;width: 200px;cursor: default;font-family: "72", Arial;color: #212121;font-weight: 700;font-size: 16px;}
