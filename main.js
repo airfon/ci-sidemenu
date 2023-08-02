@@ -8,6 +8,7 @@
 			<style>	
    			#navigation-menu {width: 70px;height: 100%;overflow: hidden;border-right: 1px solid #c9c9c9;transition: width .3s cubic-bezier(0,0.55,0.45,1) .5s;background-color: #ffffff;}
 			#navigation-menu:hover {width: 270px;transition: width .3s cubic-bezier(0,0.55,0.45,1);}
+			.menu-item-container {margin-top: 10px;}
 			.menu-item-container:first-child {margin-top: 60px;}
 			.menu-item-container {position: relative;height: 60px;width: 100%;cursor: default;}
 			.menu-item-container:hover {background-color: #f5f9fc;}
