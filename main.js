@@ -53,9 +53,9 @@
 			}
 		}
 		getID() {
-			if (ID !== undefined) {
+			//if (ID !== undefined) {
 				return ID;
-			}
+			//}
 		}
 	});
 	function setSelectedId() {
