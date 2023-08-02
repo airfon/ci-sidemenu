@@ -43,7 +43,7 @@
 				menuItemContainer.addEventListener("click", setSelectedId);
 				navigationMenu.appendChild(menuItemContainer);
 			}
-			document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar__1"').querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
+			document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style","overflow: visible");
 		}
 		getID() {
 			return ID;
