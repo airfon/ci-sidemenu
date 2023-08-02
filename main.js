@@ -1,4 +1,5 @@
 (function()  {
+	let ID = "";
 	customElements.define('com-str-costinsights-sidebar', class SideBar extends HTMLElement {
 		constructor() {
 			super();
