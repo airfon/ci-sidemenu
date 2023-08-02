@@ -35,7 +35,7 @@
 				];
 				for(let i=0;i<menuItemsJSONs.length;i++) {
 					let menuItemContainer = document.createElement("div");
-					if (link.includes(menuItemsJSONs[i].uid) {
+					if (link.includes(menuItemsJSONs[i].uid)) {
 						menuItemContainer.setAttribute("class","menu-item-container-selected");
 					} else {
 						menuItemContainer.setAttribute("class","menu-item-container");
@@ -53,9 +53,9 @@
 			}
 		}
 		getID() {
-			//if (ID !== undefined) {
+			if (ID !== undefined) {
 				return ID;
-			//}
+			}
 		}
 	});
 	function setSelectedId() {
