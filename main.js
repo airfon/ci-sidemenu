@@ -18,6 +18,7 @@
 				</style>
 				<div id="navigation-menu"></div>`;
             this.appendChild(root);
+		var that = this;
         }
         connectedCallback() {
             let link = window.location.href;
@@ -67,7 +68,7 @@
     function setSelectedId() {
         ID = this.getAttribute("uid");
 	let eventClick = new Event("onClick");
-	this.dispatchEvent(eventClick);
+	that.dispatchEvent(eventClick);
     }
 }
 )();
