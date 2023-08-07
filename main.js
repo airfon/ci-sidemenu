@@ -22,7 +22,7 @@
 	    
         connectedCallback() {										// 2. then get external .json
             if (!document.getElementById("navigation-menu").children.length) {	
-                fetch("https://airfon.github.io/ci-sidemenu/menu-config.json")
+                fetch("./menu-config.json")
                     .then(response => response.json())
                     .then(data => initMenu(data));
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
