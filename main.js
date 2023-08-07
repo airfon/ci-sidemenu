@@ -18,11 +18,6 @@
 				</style>
 				<div id="navigation-menu"></div>`;
             this.appendChild(root);
-            this.addEventListener("click", event=>{
-                let eventClick = new Event("onClick");
-                this.dispatchEvent(eventClick);
-            }
-            );
         }
         connectedCallback() {
             let link = window.location.href;
@@ -58,7 +53,12 @@
                     textSpan.setAttribute("class", "menu-item-text");
                     textSpan.innerHTML = menuItemsJSONs[i].text;
                     menuItemContainer.appendChild(textSpan);
-                    menuItemContainer.addEventListener("click", setSelectedId);
+                    //menuItemContainer.addEventListener("click", setSelectedId);
+		    menuItemContainer.addEventListener("click", event=>{
+			ID = this.getAttribute("uid");
+	                let eventClick = new Event("onClick");
+	                this.dispatchEvent(eventClick);
+	            });
                     navigationMenu.appendChild(menuItemContainer);
                 }
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
@@ -69,8 +69,8 @@
         }
     }
     );
-    function setSelectedId() {
-        ID = this.getAttribute("uid");
-    }
+//    function setSelectedId() {
+ //       ID = this.getAttribute("uid");
+ //   }
 }
 )();
