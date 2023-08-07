@@ -23,12 +23,10 @@
             let link = window.location.href;
             let navigationMenu = document.getElementById("navigation-menu");
             if (!navigationMenu.children.length) {
-                let menuItemsJSONs;
+//                let menuItemsJSONs;
 		fetch ("https://airfon.github.io/ci-sidemenu/menu-config.js")
 			.then(response=>resp.json())
-			.then(menuItemJSON=> menuItemsJSONs = menuItemJSON)
-			.then(
-			    for (let i = 0; i < menuItemsJSONs.length; i++) {
+			.then(menuItemsJSONs=> for (let i = 0; i < menuItemsJSONs.length; i++) {
 			    let menuItemContainer = document.createElement("div");
 			    if (link.includes(menuItemsJSONs[i].uid)) {
 				menuItemContainer.setAttribute("class", "menu-item-container-selected");
@@ -43,9 +41,7 @@
 			    menuItemContainer.appendChild(textSpan);
 			    menuItemContainer.addEventListener("click", setSelectedId);
 			    navigationMenu.appendChild(menuItemContainer);
-			}
-			);
-                
+			});
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
             }
         }
