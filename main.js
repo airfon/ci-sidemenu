@@ -1,6 +1,6 @@
 (function() {
     customElements.define('com-str-costinsights-sidebar', class SideBar extends HTMLElement {
-        constructor() {
+        constructor() {											// 1. set initial HTML markup
             super();
             let root = document.createElement("div");
             root.setAttribute("style", "height:100%");
@@ -19,26 +19,28 @@
 				<div id="navigation-menu"></div>`;
             this.appendChild(root);
         }
-        connectedCallback() {
-            if (!document.getElementById("navigation-menu").children.length) {
+	    
+        connectedCallback() {										// 2. then get external .json
+            if (!document.getElementById("navigation-menu").children.length) {	
                 fetch("https://airfon.github.io/ci-sidemenu/menu-config.json")
                     .then(response => response.json())
                     .then(data => initMenu(data));
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
             }
         }
-        getID() {
+	    
+        getID() {											// 5. return ID of triggered application back to SAC
             return ID;
         }
     });
 
-    function setSelectedId() {
+    function setSelectedId() {										// 4. when clicked, trigger SAC event
         ID = this.getAttribute("uid");
         let eventClick = new Event("onClick");
         this.parentElement.parentElement.parentElement.dispatchEvent(eventClick);
     }
 
-    function initMenu(menuItemsJSONs) {
+    function initMenu(menuItemsJSONs) {									// 3. populate menu with data from external file
         for (let i = 0; i < menuItemsJSONs.length; i++) {
             let link = window.location.href;
             let navigationMenu = document.getElementById("navigation-menu");
