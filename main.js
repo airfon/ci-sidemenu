@@ -24,23 +24,28 @@
             let navigationMenu = document.getElementById("navigation-menu");
             if (!navigationMenu.children.length) {
                 let menuItemsJSONs;
-		fetch ("./menu-config.json").then(response=>resp.json()).then(menuItemJSON=> menuItemsJSONs = menuItemJSON);
-                for (let i = 0; i < menuItemsJSONs.length; i++) {
-                    let menuItemContainer = document.createElement("div");
-                    if (link.includes(menuItemsJSONs[i].uid)) {
-                        menuItemContainer.setAttribute("class", "menu-item-container-selected");
-                    } else {
-                        menuItemContainer.setAttribute("class", "menu-item-container");
-                    }
-                    menuItemContainer.setAttribute("uid", menuItemsJSONs[i].uid);
-                    menuItemContainer.innerHTML = menuItemsJSONs[i].svg;
-                    let textSpan = document.createElement("span");
-                    textSpan.setAttribute("class", "menu-item-text");
-                    textSpan.innerHTML = menuItemsJSONs[i].text;
-                    menuItemContainer.appendChild(textSpan);
-                    menuItemContainer.addEventListener("click", setSelectedId);
-                    navigationMenu.appendChild(menuItemContainer);
-                }
+		fetch ("https://airfon.github.io/ci-sidemenu/menu-config.js")
+			.then(response=>resp.json())
+			.then(menuItemJSON=> menuItemsJSONs = menuItemJSON)
+			.then(
+			    for (let i = 0; i < menuItemsJSONs.length; i++) {
+			    let menuItemContainer = document.createElement("div");
+			    if (link.includes(menuItemsJSONs[i].uid)) {
+				menuItemContainer.setAttribute("class", "menu-item-container-selected");
+			    } else {
+				menuItemContainer.setAttribute("class", "menu-item-container");
+			    }
+			    menuItemContainer.setAttribute("uid", menuItemsJSONs[i].uid);
+			    menuItemContainer.innerHTML = menuItemsJSONs[i].svg;
+			    let textSpan = document.createElement("span");
+			    textSpan.setAttribute("class", "menu-item-text");
+			    textSpan.innerHTML = menuItemsJSONs[i].text;
+			    menuItemContainer.appendChild(textSpan);
+			    menuItemContainer.addEventListener("click", setSelectedId);
+			    navigationMenu.appendChild(menuItemContainer);
+			}
+			);
+                
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
             }
         }
