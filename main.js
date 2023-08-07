@@ -20,9 +20,7 @@
             this.appendChild(root);
         }
         connectedCallback() {
-            let link = window.location.href;
-            let navigationMenu = document.getElementById("navigation-menu");
-            if (!navigationMenu.children.length) {
+            if (!document.getElementById("navigation-menu").children.length) {
                 fetch("https://airfon.github.io/ci-sidemenu/menu-config.json")
                     .then(response => response.json())
                     .then(data => initMenu(data));
@@ -42,6 +40,8 @@
 
     function initMenu(menuItemsJSONs) {
         for (let i = 0; i < menuItemsJSONs.length; i++) {
+            let link = window.location.href;
+            let navigationMenu = document.getElementById("navigation-menu");
             let menuItemContainer = document.createElement("div");
             if (link.includes(menuItemsJSONs[i].uid)) {
                 menuItemContainer.setAttribute("class", "menu-item-container-selected");
