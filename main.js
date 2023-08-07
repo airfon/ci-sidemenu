@@ -25,25 +25,7 @@
             if (!navigationMenu.children.length) {
 		fetch ("https://airfon.github.io/ci-sidemenu/menu-config.json")
 			.then(response=>response.json())
-			.then(menuItemsJSONs=> 
-			    {
-				    console.log(menuItemsJSONs);
-				    for (let i = 0; i < menuItemsJSONs.length; i++) {
-			    let menuItemContainer = document.createElement("div");
-			    if (link.includes(menuItemsJSONs[i].uid)) {
-				menuItemContainer.setAttribute("class", "menu-item-container-selected");
-			    } else {
-				menuItemContainer.setAttribute("class", "menu-item-container");
-			    }
-			    menuItemContainer.setAttribute("uid", menuItemsJSONs[i].uid);
-			    menuItemContainer.innerHTML = menuItemsJSONs[i].svg;
-			    let textSpan = document.createElement("span");
-			    textSpan.setAttribute("class", "menu-item-text");
-			    textSpan.innerHTML = menuItemsJSONs[i].text;
-			    menuItemContainer.appendChild(textSpan);
-			    menuItemContainer.addEventListener("click", setSelectedId);
-			    navigationMenu.appendChild(menuItemContainer);
-			}});
+			.then(data=> initMenu(data)});
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
             }
         }
@@ -57,5 +39,23 @@
 	let eventClick = new Event("onClick");
 	this.parentElement.parentElement.parentElement.dispatchEvent(eventClick);
     }
+	function initMenu(menuItemsJSONs) {
+		console.log(menuItemsJSONs);
+		    for (let i = 0; i < menuItemsJSONs.length; i++) {
+	    let menuItemContainer = document.createElement("div");
+	    if (link.includes(menuItemsJSONs[i].uid)) {
+		menuItemContainer.setAttribute("class", "menu-item-container-selected");
+	    } else {
+		menuItemContainer.setAttribute("class", "menu-item-container");
+	    }
+	    menuItemContainer.setAttribute("uid", menuItemsJSONs[i].uid);
+	    menuItemContainer.innerHTML = menuItemsJSONs[i].svg;
+	    let textSpan = document.createElement("span");
+	    textSpan.setAttribute("class", "menu-item-text");
+	    textSpan.innerHTML = menuItemsJSONs[i].text;
+	    menuItemContainer.appendChild(textSpan);
+	    menuItemContainer.addEventListener("click", setSelectedId);
+	    navigationMenu.appendChild(menuItemContainer);
+	}
 }
 )();
