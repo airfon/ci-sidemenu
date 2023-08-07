@@ -53,12 +53,7 @@
                     textSpan.setAttribute("class", "menu-item-text");
                     textSpan.innerHTML = menuItemsJSONs[i].text;
                     menuItemContainer.appendChild(textSpan);
-                    //menuItemContainer.addEventListener("click", setSelectedId);
-		    menuItemContainer.addEventListener("click", event=>{
-			ID = this.getAttribute("uid");
-	                let eventClick = new Event("onClick");
-	                this.dispatchEvent(eventClick);
-	            });
+                    menuItemContainer.addEventListener("click", setSelectedId);
                     navigationMenu.appendChild(menuItemContainer);
                 }
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
@@ -69,8 +64,10 @@
         }
     }
     );
-//    function setSelectedId() {
- //       ID = this.getAttribute("uid");
- //   }
+    function setSelectedId() {
+        ID = this.getAttribute("uid");
+	let eventClick = new Event("onClick");
+	this.dispatchEvent(eventClick);
+    }
 }
 )();
