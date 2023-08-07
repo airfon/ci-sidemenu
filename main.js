@@ -23,9 +23,8 @@
             let link = window.location.href;
             let navigationMenu = document.getElementById("navigation-menu");
             if (!navigationMenu.children.length) {
-//                let menuItemsJSONs;
 		fetch ("https://airfon.github.io/ci-sidemenu/menu-config.json")
-			.then(response=>resp.json())
+			.then(response=>response.json())
 			.then(menuItemsJSONs=> 
 			    {for (let i = 0; i < menuItemsJSONs.length; i++) {
 			    let menuItemContainer = document.createElement("div");
