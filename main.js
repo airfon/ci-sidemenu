@@ -49,7 +49,7 @@
                 menuItemContainer.setAttribute("class", "menu-item-container");
             }
             menuItemContainer.setAttribute("uid", menuItemsJSONs[i].uid);
-            menuItemContainer.innerHTML = menuItemsJSONs[i].svg;
+            menuItemContainer.innerHTML = atob(menuItemsJSONs[i].svg);
             let textSpan = document.createElement("span");
             textSpan.setAttribute("class", "menu-item-text");
             textSpan.innerHTML = menuItemsJSONs[i].text;
