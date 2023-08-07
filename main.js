@@ -67,7 +67,7 @@
     function setSelectedId() {
         ID = this.getAttribute("uid");
 	let eventClick = new Event("onClick");
-	dispatchEvent(eventClick);
+	this.parentElement.parentElement.parentElement.dispatchEvent(eventClick);
     }
 }
 )();
