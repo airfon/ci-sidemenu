@@ -41,7 +41,6 @@
     }
 
     function initMenu(menuItemsJSONs) {
-        console.log(menuItemsJSONs);
         for (let i = 0; i < menuItemsJSONs.length; i++) {
             let menuItemContainer = document.createElement("div");
             if (link.includes(menuItemsJSONs[i].uid)) {
