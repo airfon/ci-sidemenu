@@ -22,7 +22,8 @@
 	    
         connectedCallback() {										// 2. then get external .json
             if (!document.getElementById("navigation-menu").children.length) {	
-                fetch("https://sac-dev-cw.novartis.net/cw/dev/ci-sidebar/ci-config.json")
+                //fetch("https://sac-dev-cw.novartis.net/cw/dev/ci-sidebar/ci-config.json")
+		    fetch("https://raw.githubusercontent.com/airfon/ci-sidemenu/main/ci-config.json")
                     .then(response => response.json())
                     .then(data => initMenu(data));
                 document.querySelector('div[class*="sap-custom-default-sdk_com_str_costinsights_sidebar"').querySelector('div[class~="sapCustomWidget"').setAttribute("style", "overflow:visible");
