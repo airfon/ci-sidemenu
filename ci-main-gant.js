@@ -46,7 +46,7 @@
             let link = window.location.href;
             let navigationMenu = document.getElementById("navigation-menu");
             let menuItemContainer = document.createElement("div");
-            if (link.includes(menuItemsJSONs[i].uid)) {
+            if (menuItemsJSONs[i].uid === "1") {
                 menuItemContainer.setAttribute("class", "menu-item-container-selected");
             } else {
                 menuItemContainer.setAttribute("class", "menu-item-container");
