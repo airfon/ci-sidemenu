@@ -1,5 +1,5 @@
 (function() {
-    customElements.define('com-str-costinsights-sidebartest', class SideBar extends HTMLElement {
+    customElements.define('com-str-costinsights-sidebartest', class sidebartest extends HTMLElement {
         constructor() {											// 1. set initial HTML markup
             super();
             let root = document.createElement("div");
